@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Python入门 — 基本数据类型(1)"><meta name="keywords" content="Python"><meta name="author" content="某獠,undefined"><meta name="copyright" content="某獠"><title>Python入门 — 基本数据类型(1)【Joker】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Number（数字）"><span class="toc-number">1.</span> <span class="toc-text">Number（数字）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#类型"><span class="toc-number">1.1.</span> <span class="toc-text">类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类型转换"><span class="toc-number">1.2.</span> <span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数学函数"><span class="toc-number">1.3.</span> <span class="toc-text">数学函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String（字符串）"><span class="toc-number">2.</span> <span class="toc-text">String（字符串）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#转义字符（常用）"><span class="toc-number">2.1.</span> <span class="toc-text">转义字符（常用）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串格式化"><span class="toc-number">2.2.</span> <span class="toc-text">字符串格式化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串运算"><span class="toc-number">2.3.</span> <span class="toc-text">字符串运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#f-string"><span class="toc-number">2.4.</span> <span class="toc-text">f-string</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用字符串内置函数"><span class="toc-number">2.5.</span> <span class="toc-text">常用字符串内置函数</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">某獠</div><div class="author-info-description">Keep up!</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/PowerfulJoker/PowerfulJoker.github.io" target="_blank">GitHub<i class="icon-dot bg-color7"></i></a><a class="links-button button-hover" href="mailto:741218399@qq.com" target="_blank">E-Mail<i class="icon-dot bg-color5"></i></a><a class="links-button button-hover" href="tencent://message/?uin=741218399&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color7"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">6</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">6</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">3</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="title-name" href="/">Joker</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">Python入门 — 基本数据类型(1)</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-02-20 | 更新于 2020-02-20</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/Python%E5%85%A5%E9%97%A8/">Python入门</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/Python/">Python</a></div></div></div><div class="main-content"><p>注：该博客是作者学习Python时写的笔记，用于巩固作用，不够完善，仅为参考，若要较完善的资料，可去翻阅Python开发文档或菜鸟教程。<br><br>Python3 中有六个标准的数据类型：</p>
+<ul>
+<li>Number（数字）</li>
+<li>String（字符串）</li>
+<li>List（列表）</li>
+<li>Tuple（元组）</li>
+<li>Set（集合）</li>
+<li>Dictionary（字典）</li>
+</ul>
+<h1 id="Number（数字）"><a href="#Number（数字）" class="headerlink" title="Number（数字）"></a>Number（数字）</h1><h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><ul>
+<li>整形(int)  二、八、十、十六进制</li>
+<li>浮点型(float)</li>
+<li>复数(complex)</li>
+</ul>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><pre><code>int(x)  #转换为整数
+float(x)  #转换为浮点数
+complex(x) #实数部分为 x，虚数部分为 0。  
+complex(x,y)  #实数部分为 x，虚数部分为 y。      </code></pre><h2 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h2><ul>
+<li><p>以下函数与常量需要import math<br>  数学函数：绝对值、指数、对数、开方、上取整、下取整、最大值、最小值</p>
+<pre><code>abs() fabs() 绝对值函数
+ceil() 上舍整数
+floor() 下舍整数
+exp(x) e的x次幂
+log(x) =&gt; lnx   log(a,b) b为底的对数
+pow(x,y) x的y次方幂
+sqrt(x) 平方根
+max(x1,x2...)
+min(x1,x2...)
+# cmp(x,y)在python3中废置，改用(x&gt;y)-(x&lt;y)代替 </code></pre><p>  随机数函数：</p>
+<pre><code>random() [0,1)范围内</code></pre><p>  三角函数：</p>
+<pre><code>sin() cos() tan()</code></pre><p>  反三角函数：</p>
+<pre><code>asin() acos() atan()</code></pre><p>  数学常数：</p>
+<pre><code>pi   e</code></pre></li>
+</ul>
+<h1 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a>String（字符串）</h1><p>  在Python2中，普通字符串是以8位ASCII码进行存储的，而Unicode字符串则存储为16位unicode字符串，这样能够表示更多的字符集。使用的语法是在字符串前面加上前缀 u。<br><br>  在Python3中，所有的字符串都是Unicode字符串。</p>
+<h2 id="转义字符（常用）"><a href="#转义字符（常用）" class="headerlink" title="转义字符（常用）"></a>转义字符（常用）</h2><pre><code>\n 换行
+\t 制表符
+\r 回车</code></pre><h2 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h2><pre><code>%c 字符
+
+%d 整数
+%u 无符号整数
+%o 无符号八进制
+%x 无符号十六进制
+%f 浮点数，可指定精度
+%e 浮点数，用科学计数法格式化浮点数
+
+%s 字符串
+%r 对象
+%p 用十六进制数格式化变量的地址</code></pre><h2 id="字符串运算"><a href="#字符串运算" class="headerlink" title="字符串运算"></a>字符串运算</h2><pre><code>+ 字符串拼接
+* 字符串重复
+[] 字符串索引
+r/R 原始字符串：所有的字符串都是直接按照字面的意思来使用，没有转义特殊或不能打印的字符。</code></pre><h2 id="f-string"><a href="#f-string" class="headerlink" title="f-string"></a>f-string</h2><p>f-string 是 python3.6 之后版本添加的，称之为字面量格式化字符串，是新的格式化字符串的语法。</p>
+<pre><code>name = &apos;Joker&apos;
+&apos;Hello %s&apos; % name
+f&apos;Hello {name}&apos; </code></pre><h2 id="常用字符串内置函数"><a href="#常用字符串内置函数" class="headerlink" title="常用字符串内置函数"></a>常用字符串内置函数</h2><pre><code>len(str) 返回字符串长度</code></pre><p>分割与连接：</p>
+<pre><code>split(str=&quot;&quot;, num=string.count(str)) #以 str 为分隔符截取字符串，如果 num 有指定值，则仅截取 num+1 个子字符串
+join(seq) #以指定字符串作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串</code></pre><p>判断大小写，字母，数字…:</p>
+<pre><code>isalnum() #如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True,否则返回 False
+isalpha() #如果字符串至少有一个字符并且所有字符都是字母则返回 True, 否则返回 False
+isdigit() #如果字符串只包含数字则返回 True 否则返回 False..，这的数字指阿拉伯数字
+isnumeric() #如果字符串中只包含数字字符，则返回 True，否则返回 False，数字可以是： Unicode 数字，全角数字（双字节），罗马数字，汉字数字。
+islower() #如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False
+isupper() #如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False</code></pre><p>转换</p>
+<pre><code>upper() #转换字符串中所有小写字符为大写.
+
+lower() #转换字符串中所有大写字符为小写.</code></pre><p>填充</p>
+<pre><code>ljust(width[, fillchar]) #返回一个原字符串左对齐,并使用 fillchar 填充至长度 width 的新字符串，fillchar 默认为空格。
+rjust(width[, fillchar]) #返回一个原字符串右对齐,并使用fillchar(默认空格）填充至长度 width 的新字符串
+zfill(width) #返回长度为 width 的字符串，原字符串右对齐，前面填充0</code></pre><p>查找</p>
+<pre><code>find(str, beg=0, end=len(string)) #检测 str 是否包含在字符串中，如果指定范围 beg 和 end ，则检查是否包含在指定范围内，如果包含返回开始的索引值，否则返回-1
+rfind(str, beg=0, end=len(string)) #返回字符串最后一次出现的位置，如果没有匹配项则返回-1。
+index(str, beg=0, end=len(string)) #检测字符串中是否包含子字符串 str ，如果指定 beg（开始） 和 end（结束） 范围，则检查是否包含在指定范围内，该方法与 python find()方法一样，只不过如果str不在 string中会报一个异常。</code></pre></div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">某獠</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/02/20/Python%E5%85%A5%E9%97%A8-%E2%80%94-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-1/">http://yoursite.com/2020/02/20/Python%E5%85%A5%E9%97%A8-%E2%80%94-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-1/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">Joker</a>！</span></div></div></article><div id="pagination"><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2019/11/23/%E8%89%B2%E5%BD%A9%E5%B9%B3%E8%A1%A1%E4%B8%8E%E8%9E%8D%E5%90%88%E7%94%A8%E4%BA%8E%E6%B0%B4%E4%B8%8B%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA-matlab%E5%AE%9E%E7%8E%B0/"><span>色彩平衡与融合用于水下图像增强(matlab实现)</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2017 ～ 2020 By 某獠</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
